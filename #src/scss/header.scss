@@ -1,0 +1,158 @@
+.header {
+	position: absolute;
+	z-index: 5;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	// .header__container
+	&__container {
+		min-height: 152px;
+	}
+	// .header__body
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	// .header__lang
+	&__lang {
+	}
+	// .header__logo
+	&__logo {
+		margin-left: -8px;
+		img {
+			max-width: 100%;
+		}
+	}
+	// .header__search
+	&__search {
+		// margin: 0px 32px 0px 0px;
+	}
+	// .header__menu
+	&__menu {
+	}
+	// .header__right
+	&__right {
+		flex: 0 0 218px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 14px;
+		line-height: 17px;
+	}
+}
+
+.lang {
+	opacity: 0;
+	transition: opacity 0.7s ease 0s;
+	// .lang__list
+	&__list {
+		display: flex;
+		&::before {
+			margin: 0px 32px 0px 0px;
+			font-size: 24px;
+		}
+	}
+	// .lang__item
+	&__item {
+		position: relative;
+		opacity: 0;
+		&:not(:last-child) {
+			margin: 0px 24px 0px 0px;
+		}
+		&_01 {
+			transition: all 0.3s ease 0.5s;
+			left: -30px;
+		}
+		&_02 {
+			transition: all 0.4s ease 0.5s;
+			left: -75px;
+		}
+		&_03 {
+			transition: all 0.5s ease 0.5s;
+			left: -120px;
+		}
+	}
+	// .lang__link
+	&__link {
+		text-transform: uppercase;
+		color: $mainColor;
+		font-size: 14px;
+		line-height: 17px;
+		opacity: 0.5;
+		transition: opacity 0.3s ease 0s;
+		&._active {
+			opacity: 1;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 1;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.search-form {
+	display: flex;
+	align-items: center;
+	// .search-form__button
+	&__button {
+		margin: 0px 23px 0px 0px;
+		color: $mainColor;
+		font-size: 24px;
+		opacity: 0;
+		transition: opacity 0.7s ease 0.2s;
+	}
+	// .search-form__input
+	&__input {
+		transition: left 0.7s ease 0.4s, opacity 0.7s ease 0.4s;
+		opacity: 0;
+		left: -25px;
+		position: relative;
+		width: 80px;
+		background-color: transparent;
+		color: $mainColor;
+		text-transform: uppercase;
+    &::placeholder {
+      color: $mainColor;
+    }
+		&:focus {
+			padding: 6px 10px 4px;
+			border-bottom: 2px solid #fff;
+		}
+	}
+}
+
+.menu {
+	position: relative;
+	padding: 6px 10px 4px;
+	color: $mainColor;
+	text-transform: uppercase;
+	opacity: 0;
+	transition: all 0.5s ease 0.7s;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 12px;
+		left: 0px;
+		width: 100%;
+		height: 2px;
+		background-color: #fff;
+    transition: all 0.5s ease 1s;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 12px;
+		left: 0px;
+		width: 100%;
+		height: 2px;
+		background-color: #fff;
+    transition: all 0.5s ease 1s;
+	}
+	span {
+		opacity: 0;
+    transition: opacity 0.5s ease 1s;
+	}
+}
